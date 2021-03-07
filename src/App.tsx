@@ -1,7 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
+import { requestApi, requestMock } from './utils/common_functions';
+
+import AppFooter from './components/AppFooter/AppFooter';
+import Map from '../src/components/Map/Map';
+
 
 function App() {
+
   return (
     <div className="App">
       <header className="App-header">
@@ -15,9 +21,14 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Learn React1111
         </a>
       </header>
+      <div className={'AppBody'}>
+            <Map
+            />
+      </div>
+      <AppFooter />
     </div>
   );
 }
