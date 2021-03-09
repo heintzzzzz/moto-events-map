@@ -1,0 +1,21 @@
+.MapComponent{
+
+}
+
+.MapContainer{
+  width: 100%;
+  min-height: 1000px;
+  display: block;
+  position: relative;
+}
+
+.iconImg{
+
+}
+
+.iconImgText{
+  display: block;
+  position: absolute;
+  top: 1px;
+  background: red;
+}

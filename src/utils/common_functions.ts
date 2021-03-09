@@ -1,4 +1,5 @@
 import axios from 'axios';
+export const MAP_TOKEN = process.env.REACT_APP_MAP_TOKEN;
 
 
 export function requestMock(paramd?: {
@@ -10,22 +11,22 @@ export function requestMock(paramd?: {
         {
             id: 1,
             title: 'title 1',
-            coords: [],
+            coords: [59.949499, 30.232107],
         },
         {
             id: 2,
-            title: 'title 2',
-            coords: [],
+            title: 'title 212312312312312',
+            coords: [59.929387, 30.321592],
         },
         {
             id: 3,
             title: 'title 3',
-            coords: [],
+            coords: [59.875866, 30.320203],
         },
         {
             id: 4,
             title: 'title 4',
-            coords: [],
+            coords: [59.875866, 30.320203],
         },
     ];
 
