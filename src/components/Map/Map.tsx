@@ -16,6 +16,49 @@ interface IStateMap {
     dots: []
 }
 
+function getDotCatImage(cat_id: number) {
+
+    let cat = `activity`;
+    switch(cat_id) {
+        case 0:
+            cat = `archive`;
+            break;
+        case 1:
+            cat = `boolmark`;
+            break;
+        case 2:
+            cat = `bar-chart`;
+            break;
+        default:
+            cat = `check-square`;
+            break;
+    }
+
+    //return `/images/icons/${cat}.svg`;
+    return `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="green" stroke="lime" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>`;
+}
+
+function createDotIcon(data:any) {
+    let circle_icon = `<svg class="circle_icon" 
+    viewbox="0 0 54 54" width="54" height="54">`;
+
+    const circle = `<circle cx="27" cy="27" r="10" stroke="red" stroke-width="1" fill="cyan"/>`;
+    circle_icon += circle;
+    circle_icon += '</svg>';
+
+    const cat_image = getDotCatImage(data.cat_id);
+
+    const icon = L.divIcon({
+        //html: `${circle_icon} <span class='iconImgText'>${data.title}</span>`,
+        html: `${cat_image} <span class='iconImgText'>${data.title}</span>`,
+        className: 'iconImg',
+        iconSize: [54, 54],
+        iconAnchor: [27, 27],
+    });
+
+    return icon;
+}
+
 class Map extends Component<IPropsMap, IStateMap> {
     private container:any = null;
 
@@ -34,16 +77,19 @@ class Map extends Component<IPropsMap, IStateMap> {
         {
             id: 1,
             title: 'title 1',
+            cat_id: 1,
             coords: [59.953246, 30.254180],
         },
         {
             id: 2,
             title: 'title 212312312312312',
+            cat_id: 2,
             coords: [59.912928, 30.276840],
         },
         {
             id: 3,
             title: 'title 3',
+            cat_id: 3,
             coords: [59.888783, 30.402496],
         },
         {
@@ -64,18 +110,6 @@ class Map extends Component<IPropsMap, IStateMap> {
                 filters: [],
             }
         }*/
-
-        //requestApi(request);
-/*
-        let events = requestMock();
-
-/!*        this.setState((state: IStateMap) => ({
-            events,
-        }));*!/
-
-        this.setState(({
-            events: events,
-        }));*/
 
         setTimeout(() => {
             this.setState((state: any) => ({
@@ -110,13 +144,13 @@ class Map extends Component<IPropsMap, IStateMap> {
             let dots:any = [];
 
             this.state.events.forEach((ev) => {
-                let circle_icon = `<svg 
+/*                let circle_icon = `<svg
                 class="circle_icon" 
                 viewbox="0 0 54 54" 
                 width="54" 
-                height="54">`;
+                height="54">`;*/
 
-                const circle = '<circle cx="27" cy="27" r="10" stroke="red" stroke-width="1" fill="cyan"/>';
+/*                const circle = '<circle cx="27" cy="27" r="10" stroke="red" stroke-width="1" fill="cyan"/>';
                 circle_icon += circle;
                 circle_icon += '</svg>';
 
@@ -125,7 +159,9 @@ class Map extends Component<IPropsMap, IStateMap> {
                     className: 'iconImg',
                     iconSize: [54, 54],
                     iconAnchor: [27, 27],
-                });
+                });*/
+
+                const icon = createDotIcon(ev);
 
                 let dot = L.marker(ev.coords, {icon: icon}).addTo(this.state.map);
 
@@ -138,8 +174,6 @@ class Map extends Component<IPropsMap, IStateMap> {
     }
 
     render() {
-
-        console.log(this.state);
 
         return (<div className={'MapComponent'}>
             <div
