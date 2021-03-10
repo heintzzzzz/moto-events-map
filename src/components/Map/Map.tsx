@@ -138,6 +138,9 @@ class Map extends Component<IPropsMap, IStateMap> {
     }
 
     render() {
+
+        console.log(this.state);
+
         return (<div className={'MapComponent'}>
             <div
                 ref={this.container}
