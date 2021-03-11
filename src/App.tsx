@@ -4,13 +4,13 @@ import { requestApi, requestMock } from './utils/common_functions';
 
 import AppFooter from './components/AppFooter/AppFooter';
 import Map from '../src/components/Map/Map';
-
+import Header from './components/Header/Header';
 
 function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
+{/*      <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -23,7 +23,8 @@ function App() {
         >
           Learn React1111
         </a>
-      </header>
+      </header>*/}
+      <Header />
       <div className={'AppBody'}>
             <Map
             />

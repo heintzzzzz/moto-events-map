@@ -1,10 +1,14 @@
 .MapComponent{
-
+  width: 100%;
+  min-height: 500px;
+  display: block;
+  position: relative;
 }
 
 .MapContainer{
   width: 100%;
-  min-height: 1000px;
+  min-height: 500px;
+  height: 100vh;
   display: block;
   position: relative;
 }
