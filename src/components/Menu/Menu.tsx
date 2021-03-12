@@ -4,7 +4,7 @@ import './Menu.scss';
 const Menu = (props:any) => {
     const [extended, toggleExtended] = useState(false);
     const toggleMenu = () => toggleExtended(!extended);
-    return(<div className={'Menu'}>
+    return(<div className={`Menu ${(extended) ? 'ExtendedMenu' : ''}`}>
         <div onClick={() => toggleMenu()}
              className={'Menu__Button'}></div>
         <nav className={'Menu__List'}>
