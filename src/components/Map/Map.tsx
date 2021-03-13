@@ -4,6 +4,7 @@ import './Map.scss';
 import { requestApi, requestMock } from '../../utils/common_functions';
 import {IEvent} from '../../constants/EventsConstants';
 import * as L from 'leaflet';
+import 'leaflet.markercluster';
 
 interface IPropsMap{
     events?: IEvent[]
@@ -172,6 +173,13 @@ class Map extends Component<IPropsMap, IStateMap> {
                 const icon = createDotIcon(ev);
 
                 let dot = L.marker(ev.coords, {icon: icon}).addTo(this.state.map);
+
+                //cluster
+                let markerCluster = L.markerClusterGroup({
+                    maxClusterRadius: 50,
+                    showCoverageOnHover: false,
+                    //iconCreateFunction: createClusterIconSvg
+                });
 
                 dots.push(dot);
             });
