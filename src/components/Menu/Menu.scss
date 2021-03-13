@@ -6,7 +6,8 @@
   background: #e51414;
   justify-content: space-between;
   flex-direction: row;
-
+  align-items: center;
+  padding-left: 20px;
 }
 
 
@@ -30,12 +31,12 @@
   z-index: 99999;
   display: none;
   position: absolute;
-  top: 30px;
-  left: 10px;
+  top: 40px;
+  left: 19px;
   min-width: 300px;
   height: auto;
   padding: 5px;
-  border: 1px solid red;
+  border: 1px solid #1dfb40;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;

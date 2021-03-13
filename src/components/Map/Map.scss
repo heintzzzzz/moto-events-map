@@ -8,13 +8,17 @@
 .MapContainer{
   width: 100%;
   min-height: 500px;
-  height: 100vh;
+  height: calc(100vh - 70px);
   display: block;
   position: relative;
 }
 
 .iconImg{
-
+  pointer-events: auto;
+/*  background: #06c28d;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .iconImgText{
@@ -22,4 +26,17 @@
   position: absolute;
   top: 1px;
   background: red;
+}
+
+.circle_icon{
+  border: 1px solid blueviolet;
+  background-size: yellow;
+}
+
+.feather{
+  display: flex;
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  border: 1px solid green;
 }

@@ -35,22 +35,30 @@ function getDotCatImage(cat_id: number) {
     }
 
     //return `/images/icons/${cat}.svg`;
-    return `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="green" stroke="lime" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>`;
+    return `<svg xmlns="http://www.w3.org/2000/svg" 
+                width="54" 
+                height="54" 
+                viewBox="0 0 54 54" 
+                fill="green" 
+                stroke="lime" 
+                stroke-width="2" 
+                stroke-linecap="round" 
+                stroke-linejoin="round" 
+                class="feather1 
+                feather-activity">
+                <circle cx="27" cy="27" r="27" stroke="blueviolet" stroke-width="1" fill="grey"/>
+                <circle cx="27" cy="27" r="14" stroke="blueviolet" stroke-width="1" fill="orange"/>
+                <polyline points="37 27 33 27 30 36 26 18 21 27 17 27"></polyline>
+                <text>11</text>
+             </svg>`;
 }
 
 function createDotIcon(data:any) {
-    let circle_icon = `<svg class="circle_icon" 
-    viewbox="0 0 54 54" width="54" height="54">`;
-
-    const circle = `<circle cx="27" cy="27" r="10" stroke="red" stroke-width="1" fill="cyan"/>`;
-    circle_icon += circle;
-    circle_icon += '</svg>';
-
     const cat_image = getDotCatImage(data.cat_id);
 
     const icon = L.divIcon({
         //html: `${circle_icon} <span class='iconImgText'>${data.title}</span>`,
-        html: `${cat_image} <span class='iconImgText'>${data.title}</span>`,
+        html: `${cat_image}`,
         className: 'iconImg',
         iconSize: [54, 54],
         iconAnchor: [27, 27],

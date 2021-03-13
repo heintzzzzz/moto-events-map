@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { requestApi, requestMock } from './utils/common_functions';
 
-import AppFooter from './components/AppFooter/AppFooter';
+import Footer from './components/Footer/Footer';
 import Map from '../src/components/Map/Map';
 import Header from './components/Header/Header';
 
@@ -29,7 +29,7 @@ function App() {
             <Map
             />
       </div>
-      <AppFooter />
+      <Footer />
     </div>
   );
 }
