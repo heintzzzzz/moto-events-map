@@ -3,9 +3,11 @@ import './Header.scss';
 import Menu from '../Menu/Menu';
 
 const Header = (props:any) => {
-
-    return (<header className={'Header'}>
-        <Menu />
+    return (<header
+        className={'Header'}>
+        <Menu
+            toggleChat={props.toggleChat}
+        />
     </header>);
 }
 

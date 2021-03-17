@@ -1,33 +1,44 @@
-import logo from './logo.svg';
 import './App.css';
-import { requestApi, requestMock } from './utils/common_functions';
+import React from 'react';
 
 import Footer from './components/Footer/Footer';
-import Map from '../src/components/Map/Map';
+import Map from './components/Map/Map';
 import Header from './components/Header/Header';
+import MessageSidebar from './components/MessageSidebar/MessageSidebar';
 
 function App() {
 
+  const user = {
+      id: 1,
+      login: 'login1',
+  };
+
+  const messages = [
+      {id: 1, title: 'title1'},
+      {id: 2, title: 'title2'},
+      {id: 3, title: 'title3'},
+  ];
+
+  const [expandedSidebar, setExpandedSidebar] = React.useState(false);
+  //const [expandedSidebar, setExpandedSidebar] = React.useState(false);
+
+  const expandedMenu = () => {
+      //let test = 1111;
+
+      console.log(expandedSidebar);
+      setExpandedSidebar(!expandedSidebar);
+     // return test;
+  }
+
   return (
     <div className="App">
-{/*      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>////////
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React1111
-        </a>
-      </header>*/}
-      <Header />
+      <Header toggleChat={expandedMenu} />
+      <MessageSidebar
+        expandedSidebar={expandedSidebar}
+        user={user}
+        messages={messages} />
       <div className={'AppBody'}>
-            <Map
-            />
+            <Map />
       </div>
       <Footer />
     </div>
